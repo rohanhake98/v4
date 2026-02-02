@@ -54,7 +54,7 @@ const Navbar = ({ nav, handleNav }) => {
 							onClick={handleNav}
 							to='home'
 							className='profile-name'>
-							Peace Jinadu-Paul
+							Rohan Hake
 						</Link>
 						<NavLinks handleNav={handleNav} />
 					</div>
@@ -140,7 +140,7 @@ const Navbar = ({ nav, handleNav }) => {
 					</ul>
 					<div className='copy'>
 						<small className='copyright'>
-							© Copyright ©2022 | All rights reserved
+							© Copyright ©2026 | All rights reserved
 						</small>
 					</div>
 				</motion.div>

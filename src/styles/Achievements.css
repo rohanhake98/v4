@@ -1,0 +1,137 @@
+.achievements {
+    padding: 100px 0;
+    background-color: var(--section-bgd);
+    color: var(--nav-grey);
+    width: 100%;
+}
+
+.achievements-section,
+.certifications-section {
+    margin-top: 50px;
+}
+
+.section-title {
+    font-size: 1.8rem;
+    color: var(--soft-white);
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-weight: 600;
+}
+
+/* Achievements styling */
+.achievements-box {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.achievement-card {
+    background: var(--card-blue-shade);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.achievement-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    background: var(--navy);
+}
+
+.achievement-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.achievement-header h4 {
+    font-size: 1.3rem;
+    color: var(--soft-white);
+    font-weight: 600;
+}
+
+.achievement-icon {
+    font-size: 2rem;
+    color: var(--nav-blue);
+}
+
+.achievement-desc {
+    color: var(--nav-grey);
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.achievement-desc strong {
+    color: var(--nav-blue);
+    font-weight: 600;
+}
+
+/* Certifications styling */
+.certifications-box {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.certification-card {
+    background: var(--card-blue-shade);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 4px solid var(--nav-blue);
+}
+
+.certification-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    background: var(--navy);
+}
+
+.certification-card h4 {
+    font-size: 1.2rem;
+    color: var(--soft-white);
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.cert-issuer {
+    color: var(--nav-grey);
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+}
+
+.cert-year {
+    display: inline-block;
+    background: var(--nav-blue);
+    color: var(--white);
+    padding: 4px 12px;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .achievements {
+        padding: 60px 0;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .achievements-box,
+    .certifications-box {
+        grid-template-columns: 1fr;
+    }
+
+    .achievement-header h4 {
+        font-size: 1.1rem;
+    }
+}

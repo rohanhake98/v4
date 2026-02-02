@@ -1,46 +1,32 @@
-import { DiJavascript1 } from "react-icons/di";
-import {
-	FaFigma,
-	FaReact
-} from "react-icons/fa";
-import { RiVuejsLine } from "react-icons/ri";
-import {
-	SiFirebase,
-	SiFramer,
-	SiJest,
-	SiNextdotjs,
-	SiReactquery,
-	SiRedux,
-	SiStyledcomponents,
-	SiSupabase,
-	SiTailwindcss,
-	SiTypescript
-} from "react-icons/si";
-import { TbBrandReactNative } from "react-icons/tb";
-import Gsap from "../vectors/gsap";
+import { SiPython, SiMysql, SiPostgresql, SiJupyter, SiGit, SiGithub } from "react-icons/si";
+import { DiDatabase } from "react-icons/di";
+import { FaJava, FaChartBar, FaFileExcel, FaChartPie, FaCode } from "react-icons/fa";
+
+// Removed suspected problematic icons: SiPowerbi, SiTableau, SiPandas, SiNumpy, SiScikitlearn
+// Using generic icons to ensure build success.
 
 export const SkillsData = [
-    // Core Tech (The "must-haves")
-    { name: "Javascript", icon: <DiJavascript1 /> },
-    { name: "TypeScript", icon: <SiTypescript /> },
-    { name: "React Js", icon: <FaReact /> },
-    { name: "Next Js", icon: <SiNextdotjs /> },
-    { name: "Vue Js", icon: <RiVuejsLine /> },
-    { name: "React Native", icon: <TbBrandReactNative /> },
+    // Programming & Querying
+    { name: "Python", icon: <SiPython /> },
+    { name: "SQL", icon: <DiDatabase /> },
+    { name: "Java", icon: <FaJava /> },
 
-    // Logic & Data
-    { name: "Redux", icon: <SiRedux /> },
-    { name: "React Query", icon: <SiReactquery /> },
-    { name: "Firebase", icon: <SiFirebase /> },
-    { name: "Supabase", icon: <SiSupabase /> },
+    // Data Visualization & BI
+    { name: "Power BI", icon: <FaChartBar /> },
+    { name: "Tableau", icon: <FaChartPie /> },
+    { name: "Excel", icon: <FaFileExcel /> },
 
-    // Visuals & Motion
-    { name: "Tailwind", icon: <SiTailwindcss /> },
-    { name: "Styled Components", icon: <SiStyledcomponents /> },
-    { name: "Framer Motion", icon: <SiFramer /> },
-    { name: "GSAP", icon: <Gsap /> },
+    // Databases
+    { name: "MySQL", icon: <SiMysql /> },
+    { name: "PostgreSQL", icon: <SiPostgresql /> },
 
-    // Design & Engineering Quality
-    { name: "Jest", icon: <SiJest /> },
-    { name: "Figma", icon: <FaFigma /> },
+    // ML Libraries & Tools
+    { name: "Pandas", icon: <FaCode /> },
+    { name: "NumPy", icon: <FaCode /> },
+    { name: "Scikit-learn", icon: <FaCode /> },
+    { name: "Jupyter", icon: <SiJupyter /> },
+
+    // Version Control
+    { name: "Git", icon: <SiGit /> },
+    { name: "GitHub", icon: <SiGithub /> },
 ];

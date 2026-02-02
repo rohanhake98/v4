@@ -93,23 +93,23 @@ const Contact = () => {
 							whileInView={verticalLeft}>
 							<div className='contact-heading'>
 								<p>
-									Looking for a seasoned Front-End Engineer to lead your next big project? I specialize in building high-performance web experiences. Reach out for collaborations, consulting, or just to say hello.
+									Looking for a skilled Data Analyst to drive insights for your next major project? I specialize in transforming complex datasets into actionable business intelligence. Reach out for collaborations, data consulting, or just to say hello.
 								</p>
 							</div>
 							<div className='contact-hello'>
 								<p>Say Hello</p>
 								<Link
 									className='hello-links'
-									to='//wa.me/+2348060860565'
+									to='//wa.me/+918459374571'
 									target='_blank'>
-									wa.me/pappyjay23
+									wa.me/rohanhake98
 								</Link>
 								<a
 									className='hello-links'
-									href='mailto:pjinadu02@gmail.com'
+									href='mailto:rohanhake256@gmail.com'
 									target='_blank'
 									rel='noreferrer'>
-									pjinadu02@gmail.com
+									rohanhake256@gmail.com
 								</a>
 							</div>
 						</motion.div>

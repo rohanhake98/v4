@@ -1,81 +1,48 @@
 import React from "react";
-import { FiDownload, FiFolder, FiGithub } from "react-icons/fi";
-import { IoOpenOutline } from "react-icons/io5";
-import { Link } from "react-router-dom";
+import { FiExternalLink, FiFolder, FiGithub, FiDownload } from "react-icons/fi";
+// import { Link } from "react-router-dom"; // Link unused if we use <a> tags for external links
 
-const WorkCard = ({ w, tabId }) => {
+const WorkCard = ({ w }) => {
 	return (
-		<div>
-			{tabId === "react-native" ? (
-				<a
-					href={w.app}
-					download={w.title}
-					target='_blank'
-					rel='noreferrer'
-					className='work-link-group'>
-					<div className='works-card'>
-						<div className='works-container'>
-							<div className='top-work'>
-								<FiFolder className='work-folder' />
-								<div className='right'>
-									{w.gitlink && (
-										<Link className='work-git' to={w.gitlink} target='_blank'>
-											<FiGithub />
-										</Link>
-									)}
+		<div style={{ height: '100%' }}>
+			<div className='works-card'>
+				<div className='works-container'>
+					<div className='top-work'>
+						<FiFolder className='work-folder' />
+						<div className='right'>
+							{w.gitlink && (
+								<a className='work-git' href={w.gitlink} target='_blank' rel="noreferrer" title="View Source Code">
+									<FiGithub />
+								</a>
+							)}
 
-									<a
-										href={w.app}
-										download={w.title}
-										target='_blank'
-										rel='noreferrer'
-										className='work-link'>
-										<FiDownload />
-									</a>
-								</div>
-							</div>
-							<div className='mid-work'>
-								<p className='work-title'>{w.title}</p>
-								<p className='work-desc'>{w.desc}</p>
-							</div>
-							<div className='bottom-work'>
-								{w.tech.map((e, index) => {
-									return <small key={index}>{e}</small>;
-								})}
-							</div>
+							{/* Show download if app, or external link if site */}
+							{w.app && (
+								<a className='work-link' href={w.app} download={w.title} target='_blank' rel='noreferrer' title="Download App">
+									<FiDownload />
+								</a>
+							)}
+
+							{w.site && (
+								<a className='work-link' href={w.site} target='_blank' rel="noreferrer" title="View Live Site">
+									<FiExternalLink />
+								</a>
+							)}
 						</div>
 					</div>
-				</a>
-			) : (
-				<Link to={w.site} target='_blank' className='work-link-group'>
-					<div className='works-card'>
-						<div className='works-container'>
-							<div className='top-work'>
-								<FiFolder className='work-folder' />
-								<div className='right'>
-									{w.gitlink && (
-										<Link className='work-git' to={w.gitlink} target='_blank'>
-											<FiGithub />
-										</Link>
-									)}
-									<Link className='work-link' to={w.site} target='_blank'>
-										<IoOpenOutline />
-									</Link>
-								</div>
-							</div>
-							<div className='mid-work'>
-								<p className='work-title'>{w.title}</p>
-								<p className='work-desc'>{w.desc}</p>
-							</div>
-							<div className='bottom-work'>
-								{w.tech.map((e, index) => {
-									return <small key={index}>{e}</small>;
-								})}
-							</div>
-						</div>
+
+					<div className='mid-work'>
+						<p className='work-title'>{w.title}</p>
+						<p className='work-desc'>{w.desc}</p>
 					</div>
-				</Link>
-			)}
+
+					<div className='bottom-work'>
+						{w.tech.map((e, index) => {
+							return <small key={index}>{e}</small>;
+						})}
+					</div>
+				</div>
+			</div>
 		</div>
 	);
 };

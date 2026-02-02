@@ -1,11 +1,36 @@
-import React, { useState } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import "../styles/Works.css";
 import { motion } from "framer-motion";
-import { ReactData, ReactNativeData, VueData } from "../data/WorkData";
+import { DataAnalyticsProjects } from "../data/WorkData";
 import WorkCard from "./WorkCard";
 
 const Works = () => {
-	const [activeTab, setActiveTab] = useState("react");
+	const [width, setWidth] = useState(0);
+	const carouselRef = useRef();
+
+	useEffect(() => {
+		const handleResize = () => {
+			if (carouselRef.current) {
+				// Calculate total scrollable width minus the visible width
+				// innerWidth is implicitly used via offsetWidth properties, but we check constraints
+				setWidth(carouselRef.current.scrollWidth - carouselRef.current.offsetWidth);
+			}
+		};
+
+		// Initial check
+		handleResize();
+
+		// Listener
+		window.addEventListener('resize', handleResize);
+
+		// Timeout to ensure initial layout is painted
+		const timer = setTimeout(handleResize, 500);
+
+		return () => {
+			window.removeEventListener('resize', handleResize);
+			clearTimeout(timer);
+		};
+	}, []);
 
 	const fade = {
 		opacity: 1,
@@ -13,12 +38,6 @@ const Works = () => {
 			duration: 1.4,
 		},
 	};
-
-	const tabData = [
-		{ id: "react", label: "React", data: ReactData },
-		{ id: "vue", label: "Vue", data: VueData },
-		{ id: "react-native", label: "React Native", data: ReactNativeData },
-	];
 
 	return (
 		<div className='works' id='works'>
@@ -28,35 +47,28 @@ const Works = () => {
 					whileInView={fade}
 					viewport={{ once: true }}
 					className='heading'>
-					<p className='heading-sub-text'>I build real value</p>
-					<p className='heading-text'>Works</p>
+					<p className='heading-sub-text'>What I've built</p>
+					<p className='heading-text'>Projects</p>
 				</motion.div>
 
-				<div className='tabs'>
-					{tabData.map((tab) => (
-						<button
-							key={tab.id}
-							className={`tab ${activeTab === tab.id ? "active" : ""}`}
-							onClick={() => setActiveTab(tab.id)}>
-							{tab.label}
-						</button>
-					))}
-				</div>
-
 				<motion.div
-					className='works-box'
+					className='works-carousel-wrapper'
+					ref={carouselRef}
+					whileInView={fade}
 					initial={{ opacity: 0 }}
-					whileInView={fade}>
-					{tabData.map(
-						(tab) =>
-							activeTab === tab.id && (
-								<React.Fragment key={tab.id}>
-									{tab.data.map((w, index) => (
-										<WorkCard w={w} tabId={tab.id} key={index} />
-									))}
-								</React.Fragment>
-							)
-					)}
+				>
+					<motion.div
+						drag="x"
+						dragConstraints={{ right: 0, left: -width }}
+						whileTap={{ cursor: "grabbing" }}
+						className='works-carousel-inner'
+					>
+						{DataAnalyticsProjects.map((w, index) => (
+							<motion.div key={index} className="work-item-wrapper">
+								<WorkCard w={w} tabId="projects" />
+							</motion.div>
+						))}
+					</motion.div>
 				</motion.div>
 			</div>
 		</div>
