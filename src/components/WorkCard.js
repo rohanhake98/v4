@@ -1,33 +1,60 @@
 import React from "react";
-import { FiExternalLink, FiFolder, FiGithub, FiDownload } from "react-icons/fi";
-// import { Link } from "react-router-dom"; // Link unused if we use <a> tags for external links
+import { FiExternalLink, FiFolder, FiGithub, FiDownload, FiMaximize2 } from "react-icons/fi";
 
-const WorkCard = ({ w }) => {
+const WorkCard = ({ w, onExpand }) => {
 	return (
 		<div style={{ height: '100%' }}>
-			<div className='works-card'>
+			{/* The whole card is clickable to expand */}
+			<div className='works-card' onClick={onExpand}>
 				<div className='works-container'>
 					<div className='top-work'>
 						<FiFolder className='work-folder' />
 						<div className='right'>
+							{/* Stop propagation so these links don't trigger the modal if clicked directly */}
 							{w.gitlink && (
-								<a className='work-git' href={w.gitlink} target='_blank' rel="noreferrer" title="View Source Code">
+								<a
+									className='work-git'
+									href={w.gitlink}
+									target='_blank'
+									rel="noreferrer"
+									title="View Source Code"
+									onClick={(e) => e.stopPropagation()}
+								>
 									<FiGithub />
 								</a>
 							)}
 
-							{/* Show download if app, or external link if site */}
 							{w.app && (
-								<a className='work-link' href={w.app} download={w.title} target='_blank' rel='noreferrer' title="Download App">
+								<a
+									className='work-link'
+									href={w.app}
+									download={w.title}
+									target='_blank'
+									rel='noreferrer'
+									title="Download App"
+									onClick={(e) => e.stopPropagation()}
+								>
 									<FiDownload />
 								</a>
 							)}
 
 							{w.site && (
-								<a className='work-link' href={w.site} target='_blank' rel="noreferrer" title="View Live Site">
+								<a
+									className='work-link'
+									href={w.site}
+									target='_blank'
+									rel="noreferrer"
+									title="View Live Site"
+									onClick={(e) => e.stopPropagation()}
+								>
 									<FiExternalLink />
 								</a>
 							)}
+
+							{/* Maximize Icon to hint at expansion */}
+							<span className="work-link" title="Expand Details">
+								<FiMaximize2 />
+							</span>
 						</div>
 					</div>
 
