@@ -24,7 +24,7 @@
 
 .work-item-wrapper {
 	min-width: 320px;
-	height: 400px;
+	height: 550px;
 }
 
 /* Card Styling */
@@ -287,6 +287,58 @@
 	border: 1px solid rgba(20, 157, 221, 0.2);
 }
 
+/* Navigation Buttons */
+.modal-nav-btn {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	background: rgba(0, 0, 0, 0.5);
+	color: var(--soft-white);
+	border: none;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	font-size: 2rem;
+	cursor: pointer;
+	z-index: 1001;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: all 0.3s ease;
+	user-select: none;
+}
+
+.modal-nav-btn:hover {
+	background: var(--nav-blue);
+	color: var(--bg-color);
+}
+
+.modal-nav-btn.prev {
+	left: 20px;
+}
+
+.modal-nav-btn.next {
+	right: 20px;
+}
+
+/* Response for nav buttons */
+@media screen and (max-width: 900px) {
+	.modal-nav-btn {
+		width: 40px;
+		height: 40px;
+		font-size: 1.5rem;
+		background: rgba(0, 0, 0, 0.7);
+	}
+
+	.modal-nav-btn.prev {
+		left: 10px;
+	}
+
+	.modal-nav-btn.next {
+		right: 10px;
+	}
+}
+
 /* Scrollbar adjustment for modal */
 .project-modal-content::-webkit-scrollbar {
 	width: 8px;
@@ -305,7 +357,7 @@
 @media screen and (max-width: 768px) {
 	.work-item-wrapper {
 		min-width: 280px;
-		height: 380px;
+		height: 500px;
 	}
 
 	.modal-title {

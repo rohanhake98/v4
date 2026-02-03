@@ -17,7 +17,7 @@ function App() {
     },
     visible: {
       opacity: 1,
-      transition:{
+      transition: {
         duration: 1
       }
     }
@@ -25,21 +25,21 @@ function App() {
 
 
   return (
-    loading ? 
-    <div className="loader">
-      <div className="svg-wrapper">
-        <svg height="60" width="320" xmlns="http://www.w3.org/2000/svg">
-          <rect className="shape" height="60" width="320" />
-        </svg>        
-        <motion.p variants={loadText} initial='hidden' animate='visible' className="text">Peace Jinadu-Paul</motion.p>
+    loading ?
+      <div className="loader">
+        <div className="svg-wrapper">
+          <svg height="80" width="280" xmlns="http://www.w3.org/2000/svg">
+            <rect className="shape" height="60" width="260" x="10" y="10" />
+          </svg>
+          <motion.p variants={loadText} initial='hidden' animate='visible' className="text">Rohan Hake</motion.p>
+        </div>
       </div>
-    </div>
-    :
-    <div className="App">
-      <Router>
-        <HomePage />
-      </Router>
-    </div>
+      :
+      <div className="App">
+        <Router>
+          <HomePage />
+        </Router>
+      </div>
   );
 }
 

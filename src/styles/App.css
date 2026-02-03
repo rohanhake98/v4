@@ -26,16 +26,16 @@
 }
 
 .Toastify__container {
-    z-index: 9999 !important;
+	z-index: 9999 !important;
 }
 
 .Toastify__toast-container {
-    z-index: 9999 !important;
+	z-index: 9999 !important;
 }
 
 body {
 	overflow-x: hidden;
-  background: var(--section-bgd);
+	background: var(--section-bgd);
 }
 
 :root {
@@ -94,36 +94,42 @@ body {
 
 @keyframes pageLoad {
 	0% {
-		stroke-dasharray: 140 540;
-		stroke-dashoffset: -474;
+		stroke-dasharray: 120 450;
+		stroke-dashoffset: -400;
 		stroke-width: 8px;
 	}
+
 	100% {
 		stroke-width: 2px;
 		stroke-dashoffset: 0;
-		stroke-dasharray: 760;
+		stroke-dasharray: 640;
 	}
 }
+
 .shape {
-	stroke-dasharray: 140 540;
-	stroke-dashoffset: -474;
+	stroke-dasharray: 120 450;
+	stroke-dashoffset: -400;
 	stroke-width: 8px;
 	fill: transparent;
 	stroke: #149ddd;
 	border: 5px solid black;
-	animation: 3s ease 0s 1 pageLoad;
+	animation: 3s ease 0s 1 forwards pageLoad;
 }
+
 .text {
 	font-size: 16px;
 	text-transform: uppercase;
 	line-height: 32px;
-	letter-spacing: 8px;
+	letter-spacing: 5px;
 	color: #fff;
 	position: absolute;
-	left: 20px;
-	top: 10px;
+	left: 0;
+	top: 50%;
 	width: 100%;
-	transform: translate(-50% -50%);
+	transform: translateY(-50%);
+	text-align: center;
+	padding-left: 5px;
+	/* offset for letter-spacing */
 }
 
 @media screen and (max-width: 700px) {
@@ -136,9 +142,11 @@ body {
 	.text {
 		font-size: 13px;
 		position: absolute;
-		left: 40px;
-		top: 10px;
+		left: 0;
+		top: 50%;
+		text-align: center;
 	}
+
 	.container {
 		padding: 1rem;
 	}

@@ -4,7 +4,7 @@ import { FaBars, FaTimes } from "react-icons/fa";
 import { AiOutlineArrowUp } from "react-icons/ai";
 import { animateScroll as scroll } from "react-scroll";
 import { motion } from "framer-motion";
-import CV from "../data/Rohan Hake Resume.pdf";
+import CV from "../images/Resume/Rohan_Hake_DA.pdf";
 import { HiOutlineDocumentText } from "react-icons/hi";
 
 const HeroSection = ({ nav, handleNav }) => {
