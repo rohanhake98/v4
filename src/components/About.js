@@ -1,7 +1,7 @@
 import React from 'react';
 import "../styles/About.css"
 import { motion } from "framer-motion";
-import ProfileImg from '../images/profile_me.jpg'
+import ProfileImg from '../images/anime-style-character-space.jpg';
 
 const About = () => {
 
@@ -17,7 +17,7 @@ const About = () => {
         <div className="container">
           <motion.div initial={{ x: '-100%', opacity: 0 }} whileInView={horizontal} viewport={{ once: true }} className="heading">
             <p className="heading-sub-text">Who I am</p>
-            <p className='heading-text'>About Me</p>
+            <p className='heading-text'>My About</p>
           </motion.div>
           <div className="split-about">
             <motion.div initial={{ x: '-100%', opacity: 0 }} whileInView={horizontal} className="about-content">

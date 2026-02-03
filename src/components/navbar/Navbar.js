@@ -3,7 +3,7 @@ import { BiBookContent, BiEnvelope } from "react-icons/bi";
 import { FaHome, FaLaptop } from "react-icons/fa";
 import { FiUser } from "react-icons/fi";
 import { Link } from "react-scroll";
-import ProfileImg from "../../images/profile_me.jpg";
+import ProfileImg from "../../images/anime-style-character-space.jpg";
 import "../../styles/Navbar.css";
 import NavLinks from "./NavLinks";
 
@@ -54,7 +54,7 @@ const Navbar = ({ nav, handleNav }) => {
 							onClick={handleNav}
 							to='home'
 							className='profile-name'>
-							Rohan Hake
+							Main
 						</Link>
 						<NavLinks handleNav={handleNav} />
 					</div>
